@@ -1,0 +1,19 @@
+{
+  "Admins": [
+    {
+      "UserId": -1,
+      "MobileNo": "+989302794244",
+      "Password": "Saman" //forename
+    },
+    {
+      "UserId": -2,
+      "MobileNo": "+4410000000",
+      "Password": "Chris" //forename
+    },
+    {
+      "UserId": -3,
+      "MobileNo": "+5530000000",
+      "Password": "Alvaro" //forename
+    }
+  ]
+}

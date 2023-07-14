@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/TMM.API/bin/Debug/net6.0
+/TMM.API/obj
+/TMM.Application/bin/Debug/net6.0
+/TMM.Application/obj
+/TMM.Domain/bin/Debug/net6.0
+/TMM.Domain/obj
+/TMM.Infrastructure.Data/bin/Debug/net6.0
+/TMM.Infrastructure.Data/obj/Debug/net6.0
+/TMM.Infrastructure.Data/obj
+/TMM.UnitTests/bin/Debug/net6.0
+/TMM.UnitTests/obj
