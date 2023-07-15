@@ -7,7 +7,7 @@
         public async Task DeactivateCustomer_SuccessScenario()
         {
             // Arrange
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, new
@@ -48,7 +48,7 @@
         public async Task DeactivateCustomer_CustomerIsInactiveException()
         {
             // Arrange
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, new

@@ -8,10 +8,10 @@
         {
             // Arrange
             int lastCustomerId = 0, size = 10;
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
-            string title_2 = "Sam2", forename_2 = "Saman2", surname_2 = "Namnik2", emailAddress_2 = "Saman.Namnik2@gmail.com", mobileNo_2 = "+989302794242";
+            string title_2 = "Mr.2", forename_2 = "Saman2", surname_2 = "Namnik2", emailAddress_2 = "Saman.Namnik2@gmail.com", mobileNo_2 = "+989302794242";
             string addressLine1_2 = "No 36, Northen Bahar street2", addressLine2_2 = "Taleghani avenue2", town_2 = "Tehran2", county_2 = "Tehran2", postcode_2 = "1234569872", country_2 = "Iran2";
 
             var customer_1 = new Customer(title, forename, surname, emailAddress, mobileNo, new

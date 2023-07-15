@@ -6,7 +6,7 @@
         public async Task CreateCustomer_SuccessScenario()
         {
             // Arrange
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran",
                 postcode = "1234569875", country = "Iran";
 
@@ -39,7 +39,7 @@
         public async Task CreateCustomer_CustomerMobileNoExistsException()
         {
             //Arrange 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             CreateCustomerCommand command = new CreateCustomerCommand(title, forename, surname, emailAddress, mobileNo, new
@@ -60,7 +60,7 @@
         public async Task CreateCustomer_CustomerEmailAddressExistsException()
         {
             //Arrange 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             CreateCustomerCommand command = new CreateCustomerCommand(title, forename, surname, emailAddress, mobileNo, new
@@ -81,7 +81,7 @@
         public void CreateCustomer_InputValidation_Valid()
         {
             // Arrange
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             CreateCustomerCommand command = new CreateCustomerCommand(title, forename, surname, emailAddress, mobileNo, new
