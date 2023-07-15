@@ -6,6 +6,6 @@
             : base(addressLine1, addressLine2, town, county, postcode, country)
         {
         }
-        public void SetIdJustForUnitTest(int id) => Id = id;
+        public void SetId(int id) => Id = id;
     }
 }

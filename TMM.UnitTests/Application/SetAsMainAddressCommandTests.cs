@@ -13,10 +13,10 @@
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var address_1 = new MoqAddress(addressLine1, addressLine2, town, county, postcode, country);
-            address_1.SetIdJustForUnitTest(1);
+            address_1.SetId(1);
 
             var address_2 = new MoqAddress(addressLine1, addressLine2, town, county, postcode, country);
-            address_2.SetIdJustForUnitTest(addressId);
+            address_2.SetId(addressId);
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, address_1);
             customer.AddAddress(address_2);
@@ -44,7 +44,7 @@
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var address_1 = new MoqAddress(addressLine1, addressLine2, town, county, postcode, country);
-            address_1.SetIdJustForUnitTest(1);
+            address_1.SetId(1);
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, address_1);
             customer.AddAddress(address_1);

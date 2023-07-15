@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace TMM.UnitTests.Application
+﻿namespace TMM.UnitTests.Application
 {
     public class GetCustomersQueryTests
     {
@@ -24,7 +22,7 @@ namespace TMM.UnitTests.Application
 
             customer_2.Deactivate();
 
-            GetCustomersQuery CustomersQuery_all = new GetCustomersQuery(lastCustomerId, size, CustomerState.All);
+            GetCustomersQuery CustomersQuery = new GetCustomersQuery(lastCustomerId, size, CustomerState.All);
 
             var mockCustomerRepository = new Mock<IReadOnlyRepository<Customer>>();
 
@@ -32,7 +30,7 @@ namespace TMM.UnitTests.Application
                 new List<Customer> { customer_1, customer_2 });
 
             // Act
-            var result = await new GetCustomersQueryHandler(mockCustomerRepository.Object).Handle(CustomersQuery_all, CancellationToken.None);
+            var result = await new GetCustomersQueryHandler(mockCustomerRepository.Object).Handle(CustomersQuery, CancellationToken.None);
 
 
             // Assert
