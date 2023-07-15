@@ -18,11 +18,11 @@ namespace TMM.Infrastructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Forename = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    EmailAddress = table.Column<string>(type: "nvarchar(75)", maxLength: 75, nullable: false),
-                    MobileNo = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    Title = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false),
+                    Forename = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    Surname = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    EmailAddress = table.Column<string>(type: "varchar(75)", unicode: false, maxLength: 75, nullable: false),
+                    MobileNo = table.Column<string>(type: "varchar(15)", unicode: false, maxLength: 15, nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -37,12 +37,12 @@ namespace TMM.Infrastructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AddressLine1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressLine2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Town = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    County = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Postcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddressLine1 = table.Column<string>(type: "varchar(80)", unicode: false, maxLength: 80, nullable: false),
+                    AddressLine2 = table.Column<string>(type: "varchar(80)", unicode: false, maxLength: 80, nullable: true),
+                    Town = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    County = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    Postcode = table.Column<string>(type: "varchar(10)", unicode: false, maxLength: 10, nullable: false),
+                    Country = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     IsMain = table.Column<bool>(type: "bit", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -63,6 +63,20 @@ namespace TMM.Infrastructure.Data.Migrations
                 schema: "TMM",
                 table: "Addresses",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_EmailAddress",
+                schema: "TMM",
+                table: "Customers",
+                column: "EmailAddress",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_MobileNo",
+                schema: "TMM",
+                table: "Customers",
+                column: "MobileNo",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

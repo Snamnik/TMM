@@ -11,7 +11,7 @@ namespace TMM.UnitTests.Application
             int customerId = 1;
             int addressId = 2;
 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
             string addressLine1_2 = "No 36, Northen Bahar street2", addressLine2_2 = "Taleghani avenue2", town_2 = "Tehran2", county_2 = "Tehran2", postcode_2 = "1234569872", country_2 = "Iran2";
 
@@ -80,7 +80,7 @@ namespace TMM.UnitTests.Application
             // Arrange
             int customerId = 1;
 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, new Address(addressLine1, addressLine2, town, county, postcode, country));

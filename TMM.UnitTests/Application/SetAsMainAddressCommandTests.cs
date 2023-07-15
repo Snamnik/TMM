@@ -9,7 +9,7 @@
             int customerId = 1;
             int addressId = 2;
 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var address_1 = new MoqAddress(addressLine1, addressLine2, town, county, postcode, country);
@@ -40,7 +40,7 @@
             int customerId = 1;
             int addressId = 1;
 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var address_1 = new MoqAddress(addressLine1, addressLine2, town, county, postcode, country);
@@ -84,7 +84,7 @@
             int customerId = 1;
             int addressId = 2;
 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, new Address(addressLine1, addressLine2, town, county, postcode, country));
@@ -108,7 +108,7 @@
             int customerId = 1;
             int addressId = 2;
 
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, new Address(addressLine1, addressLine2, town, county, postcode, country));

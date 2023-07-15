@@ -8,7 +8,7 @@
         {
             // Arrange
             int customerId = 1;
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran",
                 county = "Tehran", postcode = "1234569875", country = "Iran", newPostCode = "9874569875";
 
@@ -61,7 +61,7 @@
         {
             //Arrange 
             int customerId = 1;
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran",
                 county = "Tehran", postcode = "1234569875", country = "Iran", newPostCode = "9874569875";
 
@@ -87,7 +87,7 @@
         {
             //Arrange 
             int customerId = 1;
-            string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
+            string title = "Mr.", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran",
                 county = "Tehran", postcode = "1234569875", country = "Iran";
 

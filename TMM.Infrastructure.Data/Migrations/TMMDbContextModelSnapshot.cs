@@ -33,12 +33,14 @@ namespace TMM.Infrastructure.Data.Migrations
                     b.Property<string>("EmailAddress")
                         .IsRequired()
                         .HasMaxLength(75)
-                        .HasColumnType("nvarchar(75)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(75)");
 
                     b.Property<string>("Forename")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -46,19 +48,28 @@ namespace TMM.Infrastructure.Data.Migrations
                     b.Property<string>("MobileNo")
                         .IsRequired()
                         .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmailAddress")
+                        .IsUnique();
+
+                    b.HasIndex("MobileNo")
+                        .IsUnique();
 
                     b.ToTable("Customers", "TMM");
                 });
@@ -74,16 +85,26 @@ namespace TMM.Infrastructure.Data.Migrations
                             SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"), 1L, 1);
 
                             b1.Property<string>("AddressLine1")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(80)
+                                .IsUnicode(false)
+                                .HasColumnType("varchar(80)");
 
                             b1.Property<string>("AddressLine2")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(80)
+                                .IsUnicode(false)
+                                .HasColumnType("varchar(80)");
 
                             b1.Property<string>("Country")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(50)
+                                .IsUnicode(false)
+                                .HasColumnType("varchar(50)");
 
                             b1.Property<string>("County")
-                                .HasColumnType("nvarchar(max)");
+                                .HasMaxLength(50)
+                                .IsUnicode(false)
+                                .HasColumnType("varchar(50)");
 
                             b1.Property<int>("CustomerId")
                                 .HasColumnType("int");
@@ -92,10 +113,16 @@ namespace TMM.Infrastructure.Data.Migrations
                                 .HasColumnType("bit");
 
                             b1.Property<string>("Postcode")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(10)
+                                .IsUnicode(false)
+                                .HasColumnType("varchar(10)");
 
                             b1.Property<string>("Town")
-                                .HasColumnType("nvarchar(max)");
+                                .IsRequired()
+                                .HasMaxLength(50)
+                                .IsUnicode(false)
+                                .HasColumnType("varchar(50)");
 
                             b1.HasKey("Id");
 

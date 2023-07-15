@@ -17,11 +17,11 @@ GO
 
 CREATE TABLE [TMM].[Customers] (
     [Id] int NOT NULL IDENTITY,
-    [Title] nvarchar(20) NOT NULL,
-    [Forename] nvarchar(50) NOT NULL,
-    [Surname] nvarchar(50) NOT NULL,
-    [EmailAddress] nvarchar(75) NOT NULL,
-    [MobileNo] nvarchar(15) NOT NULL,
+    [Title] varchar(20) NOT NULL,
+    [Forename] varchar(50) NOT NULL,
+    [Surname] varchar(50) NOT NULL,
+    [EmailAddress] varchar(75) NOT NULL,
+    [MobileNo] varchar(15) NOT NULL,
     [IsActive] bit NOT NULL,
     CONSTRAINT [PK_Customers] PRIMARY KEY ([Id])
 );
@@ -29,12 +29,12 @@ GO
 
 CREATE TABLE [TMM].[Addresses] (
     [Id] int NOT NULL IDENTITY,
-    [AddressLine1] nvarchar(max) NULL,
-    [AddressLine2] nvarchar(max) NULL,
-    [Town] nvarchar(max) NULL,
-    [County] nvarchar(max) NULL,
-    [Postcode] nvarchar(max) NULL,
-    [Country] nvarchar(max) NULL,
+    [AddressLine1] varchar(80) NOT NULL,
+    [AddressLine2] varchar(80) NULL,
+    [Town] varchar(50) NOT NULL,
+    [County] varchar(50) NULL,
+    [Postcode] varchar(10) NOT NULL,
+    [Country] varchar(50) NOT NULL,
     [IsMain] bit NOT NULL,
     [CustomerId] int NOT NULL,
     CONSTRAINT [PK_Addresses] PRIMARY KEY ([Id]),
@@ -45,8 +45,14 @@ GO
 CREATE INDEX [IX_Addresses_CustomerId] ON [TMM].[Addresses] ([CustomerId]);
 GO
 
+CREATE UNIQUE INDEX [IX_Customers_EmailAddress] ON [TMM].[Customers] ([EmailAddress]);
+GO
+
+CREATE UNIQUE INDEX [IX_Customers_MobileNo] ON [TMM].[Customers] ([MobileNo]);
+GO
+
 INSERT INTO [TMM].[MigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20230714123333_init', N'6.0.6');
+VALUES (N'20230715135236_init', N'6.0.6');
 GO
 
 COMMIT;
