@@ -65,5 +65,23 @@ List of HTTP requests
 The script related to the APIs of Postman HTTP requests is located in the TMM.API.postman_collection.json file. <br/>
 
 
+# Observability
+
+In each HTTP request with a status code other than 200-OK, a response with the following structure is returned.
+```json
+{
+    "type": "customer-does-not-exist",
+    "status": 400,
+    "detail": "There isn't a customer with that property.",
+    "instance": "/api/customers/1/addresses/1",
+    "request-id": "0HMS585O45Q25:00000002"
+}
+```
+With the request-id, you can trace whole steps of your request in log file or any other log provider like ELK Stack. <br/>
+And also, in each request whether success or failed, you can access to the request-id using the response header.
+
+![response-header](response-header.PNG)
+
+
 
 
