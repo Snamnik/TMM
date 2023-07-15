@@ -54,8 +54,14 @@ As you can see, users login to the application with their mobile number and fore
 # Postman
 
 List of variables
+
 ![variables](variables.PNG)
 <br/><br/>
+
+List of HTTP requests 
+
+![requests](postman.PNG)
+
 The script related to the APIs of Postman HTTP requests is located in the TMM.API.postman_collection.json file. <br/>
 
 
