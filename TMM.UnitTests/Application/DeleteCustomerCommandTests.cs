@@ -7,13 +7,14 @@
         public async Task DeleteCustomer_SuccessScenario()
         {
             // Arrange
+            int customerId = 1;
             string title = "Sam", forename = "Saman", surname = "Namnik", emailAddress = "Saman.Namnik@gmail.com", mobileNo = "+989302794244";
             string addressLine1 = "No 36, Northen Bahar street", addressLine2 = "Taleghani avenue", town = "Tehran", county = "Tehran", postcode = "1234569875", country = "Iran";
 
             var customer = new Customer(title, forename, surname, emailAddress, mobileNo, new
                 Address(addressLine1, addressLine2, town, county, postcode, country));
 
-            DeleteCustomerCommand command = new DeleteCustomerCommand(1);
+            DeleteCustomerCommand command = new DeleteCustomerCommand(customerId);
 
             var mockCustomerRepository = new Mock<IRepository<Customer>>();
             mockCustomerRepository.Setup(x => x.GetByIdAsync(It.IsAny<int>(), CancellationToken.None)).ReturnsAsync(customer);
@@ -28,7 +29,8 @@
         public async Task DeleteCustomer_CustomerDoesNotExistException()
         {
             //Arrange 
-            DeleteCustomerCommand command = new DeleteCustomerCommand(1);
+            int customerId = 1;
+            DeleteCustomerCommand command = new DeleteCustomerCommand(customerId);
 
             var mockCustomerRepository = new Mock<IRepository<Customer>>();
             mockCustomerRepository.Setup(x => x.GetByIdAsync(It.IsAny<int>(), CancellationToken.None)).ReturnsAsync((Customer)null);
