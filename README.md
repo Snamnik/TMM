@@ -67,6 +67,21 @@ The script related to the APIs of Postman HTTP requests is located in the TMM.AP
 
 # Observability
 
+Logger configurations in the appsettings.json file: 
+
+```json
+ "WriteTo": [
+        {
+          "Name": "File",
+          "Args": {
+            "path": "../../Logs/TMMAPI-.log",
+            "rollingInterval": "Hour",
+            "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {RequestId} {Level:u3} {UserId} {Message:lj}{NewLine}{Exception}"
+          }
+        }
+      ]
+```
+
 In each HTTP request with a status code other than 200-OK, a response with the following structure is returned.
 ```json
 {
@@ -77,7 +92,7 @@ In each HTTP request with a status code other than 200-OK, a response with the f
     "request-id": "0HMS585O45Q25:00000002"
 }
 ```
-With the request-id, you can trace whole steps of your request in log file or any other log provider like ELK Stack. <br/>
+With the request-id, you can trace whole steps of your request in log file or any other log storage like ELK Stack. <br/>
 And also, in each request whether success or failed, you can access to the request-id using the response header.
 
 ![response-header](response-header.PNG)
