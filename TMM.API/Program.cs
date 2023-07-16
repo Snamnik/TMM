@@ -8,12 +8,12 @@ builder.Configuration.AddJsonFile($"appsettings{environmentName}.json", false, t
 
 var services = builder.Services;
 var configuration = builder.Configuration;
+
 //register built-in services
 services.AddControllers()
     .AddJsonOptions(opts =>
     {
-        var enumConverter = new JsonStringEnumConverter();
-        opts.JsonSerializerOptions.Converters.Add(enumConverter);
+        opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     })
     .AddMvcOptions(options =>
 {
@@ -26,7 +26,6 @@ services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
 });
-
 
 services.AddHttpContextAccessor();
 services.AddAuthorization();
@@ -48,11 +47,8 @@ services.AddDatabase(configuration).AddAuthentication(configuration).AddApiServi
 //app pipeline
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture("en-GB").AddSupportedCultures(new string[] { "en-GB" });
 app.UseRequestLocalization(localizationOptions);
@@ -61,5 +57,9 @@ app.UseCors("TMMCorsPolicy");
 
 app.UseAuthorization();
 app.MapControllers();
+
+Console.ForegroundColor = ConsoleColor.DarkGreen;
+Console.WriteLine("Welcome to TMM-API. You have successfully launched TMM-API");
+Console.ForegroundColor = ConsoleColor.White;
 
 app.Run();

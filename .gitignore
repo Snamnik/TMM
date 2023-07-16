@@ -14,3 +14,7 @@
 /TMM.Infrastructure.Data/obj
 /TMM.UnitTests/bin/Debug/net6.0
 /TMM.UnitTests/obj
+/TMM.API/bin/Release/net6.0
+/TMM.Application/bin/Release/net6.0
+/TMM.Domain/bin/Release/net6.0
+/TMM.Infrastructure.Data/bin/Release/net6.0
