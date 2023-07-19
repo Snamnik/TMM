@@ -30,7 +30,7 @@
 
             // Act & Assert
             Assert.DoesNotThrowAsync(() => handler.Handle(command, CancellationToken.None));
-            Assert.That(customer.GetMainAddress().Id, Is.EqualTo(addressId));
+            Assert.That(customer.MainAddress.Id, Is.EqualTo(addressId));
         }
 
         [Test]

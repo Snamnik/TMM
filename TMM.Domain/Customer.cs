@@ -32,8 +32,6 @@
             _addresses.Add(address);
         }
 
-        public Address GetMainAddress() => _addresses.FirstOrDefault(a => a.IsMain);
-
         public Address GetAddress(string country, string postcode) => _addresses.FirstOrDefault(a => a.Country == country && a.Postcode == postcode);
         public Address GetAddress(int addressId) => _addresses.FirstOrDefault(a => a.Id == addressId);
 
@@ -55,14 +53,12 @@
 
         public void SetAsMainAddress(Address address)
         {
-            var currentMainAddress = GetMainAddress();
-
-            if (currentMainAddress.Id == address.Id)
+            if (MainAddress.Id == address.Id)
             {
                 throw new MainAddressIsTheSameAsBeforeException(Id, address.Id);
             }
 
-            currentMainAddress.SetAsSecondaryAddress();
+            MainAddress.SetAsSecondaryAddress();
             address.SetAsMainAddress();
         }
 

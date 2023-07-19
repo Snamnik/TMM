@@ -13,8 +13,7 @@
         {
             var httpContext = _httpContextAccessor.HttpContext;
 
-            var userId = httpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
-            LogContext.PushProperty("UserId", userId);
+            LogContext.PushProperty("UserId", httpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value);
             LogContext.PushProperty("RequestId", httpContext.TraceIdentifier);
         }
 

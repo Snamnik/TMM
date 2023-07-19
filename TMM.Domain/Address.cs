@@ -10,9 +10,12 @@
         public string Country { get; private set; }
         public bool IsMain { get; private set; }
 
-        private Address() { }
+        private Address()
+        {
+            IsMain = false;
+        }
 
-        public Address(string addressLine1, string addressLine2, string town, string county, string postcode, string country)
+        public Address(string addressLine1, string addressLine2, string town, string county, string postcode, string country) : this()
         {
             AddressLine1 = addressLine1;
             AddressLine2 = addressLine2;
@@ -20,7 +23,6 @@
             County = county;
             Postcode = postcode;
             Country = string.IsNullOrWhiteSpace(country) ? "UK" : country;
-            IsMain = false;
         }
 
         public void SetAsMainAddress() => IsMain = true;
