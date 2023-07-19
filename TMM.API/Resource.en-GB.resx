@@ -133,13 +133,13 @@
     <value>The customer isn't active.</value>
   </data>
   <data name="customer-mobile-number-exists" xml:space="preserve">
-    <value>A customer with that mobile number exists</value>
+    <value>A customer with that mobile number exists.</value>
   </data>
   <data name="customer-must-have-at-least-one-address" xml:space="preserve">
     <value>The customer must have at least one addresses.</value>
   </data>
   <data name="customer-must-have-one-main-address" xml:space="preserve">
-    <value>The customer must have a main address</value>
+    <value>The customer must have a main address.</value>
   </data>
   <data name="internal-server-error" xml:space="preserve">
     <value>An internal server error has occurred.</value>
